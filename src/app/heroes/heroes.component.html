@@ -5,16 +5,26 @@
     Add
   </button>
 </div>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-    [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span>
-    <span>{{hero.name}}</span>
-    <button class="delete"
-    (click)="delete(hero); $event.stopPropagation()">x</button>
-  </li>
-</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+      <td>{{hero.id}}</td>
+      <td>{{hero.name}}</td>
+      <td>
+        <button class="deleteBtn btn btn-danger" (click)="delete(hero); $event.stopPropagation()">x</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <div *ngIf="selectedHero">
   <h2>
     {{selectedHero.name | uppercase}} is my hero
