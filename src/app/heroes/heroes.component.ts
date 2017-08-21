@@ -6,7 +6,6 @@ import { HeroService } from '../_services/hero.service';
   selector: 'heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
-  providers: [HeroService]
 })
 export class HeroesComponent implements OnInit {
   ngOnInit(): void {
