@@ -1,19 +1,23 @@
 .selected {
-    background-color: #C4B5D6 !important;
+    background-color: #95e991 !important;
 }
 
-tr:hover {
-    background-color: rgba(137, 193, 68, 0.43) !important;
+tbody tr:hover {
+    background-color: #efd876 !important;
 }
 
-.deleteBtn {
-    display: none;
+.removeIcon {
+    visibility: hidden;
 }
 
-tr:hover button {
-    display: block;
+tr:hover .removeIcon {
+    visibility: visible;
 }
 
 td {
     font-size: 20px;
+}
+
+.jumbotron {
+    background-color: #d8d1b3;
 }
