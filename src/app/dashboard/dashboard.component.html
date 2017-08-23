@@ -1,8 +1,14 @@
 <h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
+<div class="row">
+  <div *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-md-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{hero.name}}
+      </div>
+      <div class="panel-body">
+        <img src="https://placehold.it/150x80?text=IMAGE" />
+      </div>
+      <div class="panel-footer">My id is: {{hero.id}}</div>
     </div>
-  </a>
+  </div>
 </div>
