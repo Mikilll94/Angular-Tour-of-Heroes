@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>Abilities</h1>
+</div>
+<form class="form-inline">
+  <div class="form-group">
+    <label class="col-form-label">Add ability:</label>
+  </div>
+  <div class="form-group">
+    <div class="col-md-8">
+      <input class="form-control" #abilityName />
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="add(abilityName.value); abilityName.value=''">
+      Add
+  </button>
+</form>
+<div class="col-md-4">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ability of abilities" (click)="onSelect(hero)" [class.selected]="ability === selectedAbility">
+        <td>
+          <span class="badge">{{ability.id}}</span>
+        </td>
+        <td>{{ability.name}}</td>
+        <td>
+          <span class="glyphicon glyphicon-remove text-danger removeIcon" (click)="delete(ability); $event.stopPropagation()"></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

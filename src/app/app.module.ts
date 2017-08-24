@@ -7,13 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from "./app-routing.module";
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './_helpers/in-memory-data.service';
+import { InMemoryDataService } from './_helpers/in-memory-data.service';
 
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from "./heroes/heroes.component";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { AbilitiesComponent } from './abilities/abilities.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    AbilitiesComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,6 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
