@@ -27,6 +27,14 @@ export class AbilityService {
       .catch(this.handleError);
   }
 
+  getHeroAbilities(hero_id: number): Promise<Ability[]> {
+    const url = `${this.abilitiesUrl}?heroId=${hero_id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(res => res.json().data as Ability[])
+      .catch(this.handleError);
+  }
+
   getAbility(id: number): Promise<Ability> {
     const url = `${this.abilitiesUrl}/${id}`;
     return this.http.get(url)

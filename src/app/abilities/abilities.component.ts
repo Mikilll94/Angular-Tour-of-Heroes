@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Router } from "@angular/router";
 
 import { Ability } from "../_models/ability";
@@ -14,9 +14,15 @@ export class AbilitiesComponent implements OnInit {
   title = 'Hero abilities';
   abilities = [];
   selectedAbility: Ability;
+  @Input()
+  heroId?: number;
 
   ngOnInit(): void {
-    this.getAbilities();
+    if (this.heroId == null)
+      this.getAbilities();
+    else {
+      this.getHeroAbilities(this.heroId);
+    }
   }
 
   constructor(private abilityService: AbilityService,
@@ -38,6 +44,11 @@ export class AbilitiesComponent implements OnInit {
 
   getAbilities(): void {
     this.abilityService.getAbilities()
+      .then(abilities => this.abilities = abilities);
+  }
+
+  getHeroAbilities(heroId: number): void {
+    this.abilityService.getHeroAbilities(heroId)
       .then(abilities => this.abilities = abilities);
   }
 

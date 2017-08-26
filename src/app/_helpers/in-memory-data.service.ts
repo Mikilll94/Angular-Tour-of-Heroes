@@ -17,15 +17,15 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const abilities = [
-      { id: 0,  name: 'Flight' },
-      { id: 11, name: 'Superstrength' },
-      { id: 12, name: 'Immortality' },
-      { id: 13, name: 'Melee skills' },
-      { id: 24, name: 'Super speed' },
-      { id: 26, name: 'Genius-level intellect' },
-      { id: 45, name: 'Detective skills' },
-      { id: 56, name: 'Sword skills' },
-      { id: 70, name: 'Heat vision' }        
+      { id: 0,  name: 'Flight', heroId: 12 },
+      { id: 11, name: 'Superstrength', heroId: 12 },
+      { id: 12, name: 'Immortality', heroId: 16 },
+      { id: 13, name: 'Melee skills', heroId: 19 },
+      { id: 24, name: 'Super speed', heroId: 18 },
+      { id: 26, name: 'Genius-level intellect', heroId: 12 },
+      { id: 45, name: 'Detective skills', heroId: 12 },
+      { id: 56, name: 'Sword skills', heroId: 11 },
+      { id: 70, name: 'Heat vision', heroId: 20 }        
     ];
     return {heroes, abilities};
   }
