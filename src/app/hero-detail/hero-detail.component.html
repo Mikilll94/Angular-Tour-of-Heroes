@@ -5,9 +5,10 @@
     <label>name: </label>
     <input [(ngModel)]="hero.name" placeholder="name">
   </div>
-  <div>
+  <h3>Abilities</h3>
+  <hero-abilities [heroId]="hero.id"></hero-abilities>
+  <div class="col-md-12">
     <button (click)="goBack()">Back</button>
     <button (click)="save()">Save</button>
   </div>
-  <hero-abilities [heroId]="hero.id"></hero-abilities>
 </div>

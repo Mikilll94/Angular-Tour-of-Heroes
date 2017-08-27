@@ -4,7 +4,6 @@
       <tr>
         <th>Id</th>
         <th>Name</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -13,9 +12,6 @@
           <span class="badge">{{ability.id}}</span>
         </td>
         <td>{{ability.name}}</td>
-        <td>
-          <span class="glyphicon glyphicon-remove text-danger removeIcon" (click)="delete(ability); $event.stopPropagation()"></span>
-        </td>
       </tr>
     </tbody>
   </table>
