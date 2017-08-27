@@ -25,7 +25,7 @@ export class AbilitiesComponent implements OnInit {
     }
   }
 
-  constructor(private abilityService: AbilityService,
+  constructor(protected abilityService: AbilityService,
     private router: Router) { }
 
   onSelect(ability: Ability): void {

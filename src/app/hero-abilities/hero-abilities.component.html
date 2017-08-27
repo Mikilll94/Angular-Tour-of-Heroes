@@ -15,4 +15,13 @@
       </tr>
     </tbody>
   </table>
+  <form class="form-inline">
+    <label class="mr-sm-2">Add ability</label>
+    <select [(ngModel)]="selectedFreeAbility" name="freeAbilitySelect" class="custom-select mb-2 mr-sm-2 mb-sm-0">
+    <option selected>Choose...</option>
+    <option *ngFor="let fa of free_abilities" [ngValue]="fa">{{fa.name}}</option>
+  </select>
+
+    <button type="submit">Add</button>
+  </form>
 </div>

@@ -24,8 +24,8 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 24, name: 'Super speed', heroId: 18 },
       { id: 26, name: 'Genius-level intellect', heroId: 12 },
       { id: 45, name: 'Detective skills', heroId: 12 },
-      { id: 56, name: 'Sword skills', heroId: 11 },
-      { id: 70, name: 'Heat vision', heroId: 20 }        
+      { id: 56, name: 'Sword skills' },
+      { id: 70, name: 'Heat vision' }        
     ];
     return {heroes, abilities};
   }

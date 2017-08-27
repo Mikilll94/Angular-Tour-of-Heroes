@@ -10,4 +10,18 @@ import { AbilitiesComponent } from "../abilities/abilities.component";
   templateUrl: './hero-abilities.component.html',
   styleUrls: ['./hero-abilities.component.css'],
 })
-export class HeroAbilitiesComponent extends AbilitiesComponent { }
+export class HeroAbilitiesComponent extends AbilitiesComponent {
+  free_abilities: Ability[];
+  selectedFreeAbility: Ability;
+
+ngOnInit() {
+  this.getFreeAbilities();
+  console.log("FREE ABILITIES", this.free_abilities);
+}
+
+  getFreeAbilities() {
+    this.abilityService.getAbilities()
+      .then(abilities => this.free_abilities = 
+        abilities.filter(ability => ability.heroId == null));
+  }
+}
