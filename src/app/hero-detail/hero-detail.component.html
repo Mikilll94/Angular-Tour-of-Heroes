@@ -5,9 +5,9 @@
     <label>name: </label>
     <input [(ngModel)]="hero.name" placeholder="name">
   </div>
-
-  <abilities [heroId]="hero.id"></abilities>
-
-  <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+  <div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+  </div>
+  <hero-abilities [heroId]="hero.id"></hero-abilities>
 </div>
